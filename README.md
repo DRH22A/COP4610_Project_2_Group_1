@@ -8,9 +8,9 @@
 
 ## Division of Labor
 
-### Part 1: [Description]
-- **Responsibilities**: [Description]
-- **Assigned to**: [Members]
+### Part 1: System Call Integration
+- **Responsibilities**: Add system calls to the C program
+- **Assigned to**: Luke Stanton
 
 ### Part 2: [Description]
 - **Responsibilities**: [Description]
@@ -62,13 +62,14 @@ This will run the program ...
 ## Development Log
 Each member records their contributions here.
 
-### [Member 1]
+### Luke Stanton
 
 | Date       | Work Completed / Notes |
 |------------|------------------------|
-| YYYY-MM-DD | [Description of task]  |
-| YYYY-MM-DD | [Description of task]  |
-| YYYY-MM-DD | [Description of task]  |
+| 2025-10-17 | Completed Part 1       |
+| 2025-10-17 | Tested Part 1 (Linprog)|
+
+
 
 ### [Member 2]
 
