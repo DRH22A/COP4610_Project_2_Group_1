@@ -12,9 +12,9 @@
 - **Responsibilities**: Add system calls to the C program
 - **Assigned to**: Luke Stanton
 
-### Part 2: [Description]
-- **Responsibilities**: [Description]
-- **Assigned to**: [Members]
+### Part 2: Timer Kernel Module
+- **Responsibilities**: Created a kernel module that creates /proc/timer. It displays current time and elapsed time between reads using ktime_get_real_ts64(). Also implemented a Makefile that creates the files necessary to run my_timer.c.
+- **Assigned to**: Daniel Halterman
 
 ### Extra Credit
 - **Responsibilities**: [Description]
@@ -30,7 +30,7 @@
 │  └─ Makefile
 ├─ part2/
 │  ├─ src/
-│  │  └─ (empty)
+│  │  └─ my_timer.c
 │  └─ Makefile
 ├─ part3/
 │  ├─ src/
@@ -59,6 +59,31 @@ make run
 ```
 This will run the program ...
 
+
+Part 2 Compilation:
+```
+make
+```
+
+Next, run this command to insert a specified kernel module into the running kernel
+
+```
+$ sudo insmod my_timer.ko
+```
+
+Afterwards, you can test how well it works with this command where X is the amount of seconds you want the terminal to sleep.
+
+```
+$ cat /proc/timer; sleep X; cat /proc/timer
+```
+
+Then go ahead and clean everything up with these two commands:
+
+```
+$ make clean
+$ sudo rmmod my_timer 
+```
+
 ## Development Log
 Each member records their contributions here.
 
@@ -71,11 +96,11 @@ Each member records their contributions here.
 
 
 
-### [Member 2]
+### Daniel Halterman
 
 | Date       | Work Completed / Notes |
 |------------|------------------------|
-| YYYY-MM-DD | [Description of task]  |
+| 2025-10-25 | Completed Part 2       |
 | YYYY-MM-DD | [Description of task]  |
 | YYYY-MM-DD | [Description of task]  |
 
