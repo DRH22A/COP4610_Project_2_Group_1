@@ -93,6 +93,8 @@ Each member records their contributions here.
 |------------|------------------------|
 | 2025-10-17 | Completed Part 1       |
 | 2025-10-17 | Tested Part 1 (Linprog)|
+| 2024-11-02 | Provisioned DO VM (pt 3) |
+| 2024-11-02 | Cloned linux-stable 6.16.12 (pt 3) |
 
 
 
