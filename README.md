@@ -1,6 +1,16 @@
 # Project 2: Elevator Kernel Module
 
-[Description]
+ This project aimed to provide hands-on experience with system calls, kernel programming, concurrency, synchronization, and elevator scheduling algorithms. It consisted of parts that are built upon each other to deepen your knowledge and skills in these areas.
+
+In Part 1, we added system calls to a C program and verifying their correctness using the strace tool, you gain hands-on experience with system call integration and learn about the available system calls for your machine. This part lays the foundation for understanding how system calls interact with the kernel.
+
+Part 2 took us further into kernel programming. We developed a kernel module called my_timer that retrieves and stores the current time using the ktime_get_real_ts64() function. This module creates a proc entry and allows you to read the current time and elapsed time since the last call. This part helped us understand how kernel modules work, how to interact with kernel functions, and how to use proc interfaces for communication.
+
+Part 3 focused on a more complex task: implementing a scheduling algorithm for a pet elevator. You create a kernel module representing the elevator, supporting operations like starting, stopping, and issuing requests. The module also provides a /proc/elevator entry to display important elevator information. This part challenges you to manage concurrency, synchronization, and efficient scheduling within the kernel environment.
+
+Each part of the project built upon the knowledge and skills gained in the previous parts. Part 1 introduces you to system calls and their integration, which forms the basis for kernel programming in Part 2. Part 2 expands your understanding of kernel modules and communication through proc interfaces, setting the stage for the more advanced concepts explored in Part 3.
+
+By completing this project, we acquired practical experience in system calls, kernel programming, concurrency, synchronization, and scheduling algorithms. These are essential skills for developing efficient and robust software systems, particularly in operating systems and low-level programming domains. Understanding system calls and kernel programming enables you to interact with and extend the functionality of the operating system, while concurrency, synchronization, and scheduling concepts are crucial for efficient resource management and multitasking in complex systems. 
 
 ## Group Members
 - **Daniel Halterman**: drh22a@fsu.edu
@@ -16,9 +26,9 @@
 - **Responsibilities**: Created a kernel module that creates /proc/timer. It displays current time and elapsed time between reads using ktime_get_real_ts64(). Also implemented a Makefile that creates the files necessary to run my_timer.c.
 - **Assigned to**: Daniel Halterman
 
-### Extra Credit
-- **Responsibilities**: [Description]
-- **Assigned to**: [Members]
+### Part 3: Elevator Module
+ **Responsibilities**:Implemented the pet elevator kernel module: designed data structures, elevator state machine (OFFLINE/IDLE/LOADING/UP/DOWN), and kthread to handle requests with timing rules. Added FIFO boarding with weight/capacity limits, directional logic, mutex protection, and system calls (start/request/stop) with validation and memory management. Built /proc/elevator interface for real-time status and handled full module init/cleanup including lists, kthread, mutex, and memory.
+ **Assigned to**: Daniel Halterman
 
 ## File Listing
 ```
@@ -34,7 +44,7 @@
 │  └─ Makefile
 ├─ part3/
 │  ├─ src/
-│  │  └─ (empty)
+│  │  └─ elevator.c
 │  └─ Makefile
 ├─ README.md
 ├─ Makefile
@@ -44,8 +54,8 @@
 ## How to Compile & Execute
 
 ### Requirements
-- **Compiler**: e.g., `gcc` for C/C++, `rustc` for Rust.
-- **Dependencies**: List any libraries or frameworks necessary (rust only).
+- **Compiler**: `gcc`
+
 
 ### Compilation
 For a C/C++ example:
@@ -97,23 +107,17 @@ Each member records their contributions here.
 | 2024-11-02 | Cloned linux-stable 6.16.12 (pt 3) |
 
 
-
 ### Daniel Halterman
 
 | Date       | Work Completed / Notes |
 |------------|------------------------|
 | 2025-10-25 | Completed Part 2       |
-| YYYY-MM-DD | [Description of task]  |
-| YYYY-MM-DD | [Description of task]  |
+| 2025-10-27 | Downloaded and Installed the Kernel   |
+| 2025-11-5  | Put a lot of work into the elevator.c file over a few days  |
 
 
 ## Meetings
-Document in-person meetings, their purpose, and what was discussed.
-
-| Date       | Attendees            | Topics Discussed | Outcomes / Decisions |
-|------------|----------------------|------------------|-----------------------|
-| YYYY-MM-DD | [Names]              | [Agenda items]   | [Actions/Next steps]  |
-| YYYY-MM-DD | [Names]              | [Agenda items]   | [Actions/Next steps]  |
+There were no meetings. Everything was discussed through email. We will have a meeting the days before our presentation so we are ready.
 
 
 ## Bugs
