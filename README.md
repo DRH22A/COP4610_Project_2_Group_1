@@ -28,7 +28,7 @@ By completing this project, we acquired practical experience in system calls, ke
 
 ### Part 3: Elevator Module
  **Responsibilities**:Implemented the pet elevator kernel module: designed data structures, elevator state machine (OFFLINE/IDLE/LOADING/UP/DOWN), and kthread to handle requests with timing rules. Added FIFO boarding with weight/capacity limits, directional logic, mutex protection, and system calls (start/request/stop) with validation and memory management. Built /proc/elevator interface for real-time status and handled full module init/cleanup including lists, kthread, mutex, and memory.
- **Assigned to**: Daniel Halterman
+ **Assigned to**: Daniel Halterman, Luke Stanton
 
 ## File Listing
 ```
@@ -46,6 +46,7 @@ By completing this project, we acquired practical experience in system calls, ke
 │  ├─ src/
 │  │  └─ elevator.c
 │  └─ Makefile
+│  └─ syscalls.c
 ├─ README.md
 ├─ Makefile
 
@@ -103,8 +104,10 @@ Each member records their contributions here.
 |------------|------------------------|
 | 2025-10-17 | Completed Part 1       |
 | 2025-10-17 | Tested Part 1 (Linprog)|
-| 2024-11-02 | Provisioned DO VM (pt 3) |
-| 2024-11-02 | Cloned linux-stable 6.16.12 (pt 3) |
+| 2025-11-02 | Provisioned DO VM (part 3) |
+| 2025-11-02 | Cloned linux-stable 6.16.12 (part 3) |
+| 2025-11-05 | Generated required strace files (part 1) |
+| 2025-11-05 | Completed Makefile and syscalls for part 3 |
 
 
 ### Daniel Halterman
@@ -117,13 +120,11 @@ Each member records their contributions here.
 
 
 ## Meetings
-There were no meetings. Everything was discussed through email. We will have a meeting the days before our presentation so we are ready.
+There were no formal meetings but constant communication through email. We will have a meeting the days before our presentation so we are ready.
 
 
 ## Bugs
-- **Bug 1**: This is bug 1.
-- **Bug 2**: This is bug 2.
-- **Bug 3**: This is bug 3.
+N/A
 
 
 ## Considerations
