@@ -290,22 +290,27 @@ static int elevator_proc_show(struct seq_file *m, void *v) {
 
     seq_printf(m, "Elevator state: %s\n", get_state_string(elevator.state));
     seq_printf(m, "Current floor: %d\n", elevator.current_floor);
-    seq_printf(m, "Current load: %d pets (%d lbs)\n", elevator.num_pets, elevator.current_weight);
+    seq_printf(m, "Current load: %d lbs\n", elevator.current_weight);
 
     seq_printf(m, "Elevator status: ");
-    list_for_each_entry(pet, &elevator.pets_on_elevator, list)
-        seq_printf(m, "%c%d ", get_pet_char(pet->type), pet->destination_floor);
+    if (list_empty(&elevator.pets_on_elevator)) {
+        seq_puts(m, "empty");
+    } else {
+        list_for_each_entry(pet, &elevator.pets_on_elevator, list)
+            seq_printf(m, "%c%d ", get_pet_char(pet->type), pet->destination_floor);
+    }
     seq_puts(m, "\n");
 
     for (i = NUM_FLOORS-1; i >= 0; i--) {
-        seq_printf(m, "[%c] Floor %d: %d pets ", (elevator.current_floor == i+1?'*':' '), i+1, floors[i].num_waiting);
+        seq_printf(m, "[%c] Floor %d: %d ", (elevator.current_floor == i+1?'*':' '), i+1, floors[i].num_waiting);
         list_for_each_entry(pet, &floors[i].waiting_pets, list)
             seq_printf(m, "%c%d ", get_pet_char(pet->type), pet->destination_floor);
         seq_puts(m, "\n");
     }
 
-    seq_printf(m, "Total pets serviced: %d\n", total_pets_serviced);
-    seq_printf(m, "Total pets waiting: %d\n", total_pets_waiting);
+    seq_printf(m, "Number of pets: %d\n", elevator.num_pets);
+    seq_printf(m, "Number of pets waiting: %d\n", total_pets_waiting);
+    seq_printf(m, "Number of pets serviced: %d\n", total_pets_serviced);
     mutex_unlock(&elevator_mutex);
     return 0;
 }

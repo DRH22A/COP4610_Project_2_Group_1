@@ -1,0 +1,34 @@
+execve("./part1", ["./part1"], 0xffffd1dfd0e0 /* 9 vars */) = 0
+brk(NULL)                               = 0xaaaad8f54000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0xffff83bea000
+faccessat(AT_FDCWD, "/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=9167, ...}) = 0
+mmap(NULL, 9167, PROT_READ, MAP_PRIVATE, 3, 0) = 0xffff83be7000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/aarch64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0\267\0\1\0\0\0\360\206\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=1722920, ...}) = 0
+mmap(NULL, 1892240, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_DENYWRITE, -1, 0) = 0xffff839e3000
+mmap(0xffff839f0000, 1826704, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0) = 0xffff839f0000
+munmap(0xffff839e3000, 53248)           = 0
+munmap(0xffff83bae000, 12176)           = 0
+mprotect(0xffff83b89000, 81920, PROT_NONE) = 0
+mmap(0xffff83b9d000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x19d000) = 0xffff83b9d000
+mmap(0xffff83ba2000, 49040, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0xffff83ba2000
+close(3)                                = 0
+set_tid_address(0xffff83beafb0)         = 1616
+set_robust_list(0xffff83beafc0, 24)     = 0
+rseq(0xffff83beb600, 0x20, 0, 0xd428bc00) = 0
+mprotect(0xffff83b9d000, 12288, PROT_READ) = 0
+mprotect(0xaaaac53df000, 4096, PROT_READ) = 0
+mprotect(0xffff83bef000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0xffff83be7000, 9167)            = 0
+getpid()                                = 1616
+getppid()                               = 1613
+getuid()                                = 0
+getgid()                                = 0
+getpgid(0)                              = 1613
+exit_group(0)                           = ?
++++ exited with 0 +++
