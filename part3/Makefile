@@ -1,9 +1,8 @@
 KDIR := /lib/modules/$(shell uname -r)/build
 PWD  := $(shell pwd)
 
-obj-m := elevator.o syscalls.o
+obj-m := elevator.o
 elevator-objs := src/elevator.o
-syscalls-objs := syscalls.o
 
 all:
 	$(MAKE) -C $(KDIR) M=$(PWD) modules
@@ -20,4 +19,3 @@ unload:
 reload: unload load
 
 .PHONY: all clean load unload reload
-
